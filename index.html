@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ART Kitchens | Best Family Restaurant in Guntur</title>
+    <meta name="description"
+        content="Enjoy authentic Indian cuisine, premium ambience, and family dining at The ART Kitchens in Guntur. Rated 4.5 stars by 2700+ customers.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            DEFAULT: '#7A1E1E',
+                            light: '#942b2b',
+                            dark: '#5c1414'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F2C94C',
+                            dark: '#b08d27'
+                        },
+                        cream: '#FFF8F2',
+                        charcoal: '#1F1F1F',
+                        beige: '#F4EDE4',
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        poppins: ['"Poppins"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(31,31,31,0.6), rgba(31,31,31,0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+                        'gold-gradient': "linear-gradient(135deg, #D4AF37 0%, #F2C94C 100%)",
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-poppins bg-cream text-charcoal antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-utensils text-maroon text-2xl"></i>
+                    <span class="font-playfair font-bold text-2xl tracking-wide text-maroon">The ART Kitchens</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-charcoal hover:text-maroon font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-charcoal hover:text-maroon font-medium transition-colors">About</a>
+                    <a href="#menu" class="text-charcoal hover:text-maroon font-medium transition-colors">Menu</a>
+                    <a href="#gallery" class="text-charcoal hover:text-maroon font-medium transition-colors">Gallery</a>
+                    <a href="#contact" class="text-charcoal hover:text-maroon font-medium transition-colors">Contact</a>
+                    <a href="#contact"
+                        class="bg-gold-gradient text-charcoal font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">Reserve
+                        Table</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-charcoal hover:text-maroon focus:outline-none">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home"
+                    class="block px-3 py-2 text-charcoal hover:text-maroon hover:bg-beige rounded-md font-medium">Home</a>
+                <a href="#about"
+                    class="block px-3 py-2 text-charcoal hover:text-maroon hover:bg-beige rounded-md font-medium">About</a>
+                <a href="#menu"
+                    class="block px-3 py-2 text-charcoal hover:text-maroon hover:bg-beige rounded-md font-medium">Menu</a>
+                <a href="#gallery"
+                    class="block px-3 py-2 text-charcoal hover:text-maroon hover:bg-beige rounded-md font-medium">Gallery</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-charcoal hover:text-maroon hover:bg-beige rounded-md font-medium">Contact</a>
+                <a href="#contact"
+                    class="block mt-4 text-center bg-gold-gradient text-charcoal font-semibold px-6 py-3 rounded-full shadow-md">Reserve
+                    Table</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Order Button -->
+    <a href="tel:+919669181999"
+        class="fixed bottom-6 right-6 z-50 bg-maroon text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-maroon-dark hover:scale-110 transition-all duration-300 md:hidden animate-bounce">
+        <i class="fa-solid fa-phone text-xl"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-fixed pt-20">
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-transparent"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+
+            <!-- Rating Badge -->
+            <div
+                class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-8 animate-fade-in group hover:bg-white/20 transition-all cursor-default">
+                <div class="flex text-gold">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <span class="text-white text-sm font-medium tracking-wide">4.5 / 2700+ Google Reviews</span>
+            </div>
+
+            <h1 class="font-playfair text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-xl animate-slide-up"
+                style="animation-delay: 0.2s;">
+                Guntur’s Favorite <br><span class="text-gold">Dining Experience</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light drop-shadow-md animate-slide-up"
+                style="animation-delay: 0.4s;">
+                Authentic flavors, warm ambience, and unforgettable meals for family and friends. Where families
+                celebrate food.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 animate-slide-up w-full sm:w-auto"
+                style="animation-delay: 0.6s;">
+                <a href="#menu"
+                    class="bg-maroon text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-maroon-light hover:-translate-y-1 transition-all duration-300 text-center">View
+                    Menu</a>
+                <a href="#contact"
+                    class="bg-transparent border-2 border-gold text-gold font-semibold px-8 py-4 rounded-full hover:bg-gold hover:text-charcoal hover:-translate-y-1 transition-all duration-300 text-center">Reserve
+                    Table</a>
+            </div>
+
+            <!-- Services Icons -->
+            <div class="flex flex-wrap justify-center gap-6 mt-16 text-white/80 animate-fade-in"
+                style="animation-delay: 0.8s;">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-chair text-gold"></i><span>Dine-In</span>
+                </div>
+                <div class="w-1.5 h-1.5 rounded-full bg-gold/50 my-auto"></div>
+                <div class="flex items-center gap-2"><i
+                        class="fa-solid fa-motorcycle text-gold"></i><span>Delivery</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="text-maroon font-semibold tracking-wider uppercase text-sm">About The ART
+                        Kitchens</span>
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-charcoal leading-tight">
+                        Experience Flavor, Ambience, and <span class="text-gold">Unforgettable Moments.</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Known for our exceptional ambience and authentic Indian cuisine, The ART Kitchens is Guntur’s
+                        premier destination for family gatherings and celebrations. We bring together traditional
+                        recipes and bold Guntur taste in a setting that feels just like home.
+                    </p>
+                    <div class="pt-4 border-t border-gray-100">
+                        <h3 class="font-playfair font-semibold text-2xl text-charcoal mb-4">Our Signature Specialties
+                        </h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <li class="flex items-center gap-3 text-gray-700 font-medium">
+                                <i class="fa-solid fa-check text-gold"></i> Bhimavaram Rajula Kodi Palav
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700 font-medium">
+                                <i class="fa-solid fa-check text-gold"></i> Hariyali Paneer Tikka
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700 font-medium">
+                                <i class="fa-solid fa-check text-gold"></i> Chicken Maharaja
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700 font-medium">
+                                <i class="fa-solid fa-check text-gold"></i> NTR Kodi Pakodi
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 relative">
+                    <div class="absolute -inset-4 bg-gold/10 rounded-3xl transform rotate-3 -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Restaurant Ambience"
+                        class="rounded-2xl shadow-lg h-64 lg:h-80 object-cover w-full transform hover:scale-105 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Authentic Food"
+                        class="rounded-2xl shadow-lg h-64 lg:h-80 object-cover w-full mt-8 transform hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 text-center group transform hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 mx-auto bg-maroon/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-maroon transition-colors duration-300">
+                        <i class="fa-solid fa-gem text-2xl text-maroon group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3 text-charcoal">Premium Ambience</h3>
+                    <p class="text-gray-600 text-sm">Beautiful interiors perfect for families and gatherings.</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 text-center group transform hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-fire-burner text-2xl text-gold group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3 text-charcoal">Authentic Flavors</h3>
+                    <p class="text-gray-600 text-sm">Traditional recipes with bold and unforgettable Guntur taste.</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 text-center group transform hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 mx-auto bg-maroon/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-maroon transition-colors duration-300">
+                        <i class="fa-solid fa-star text-2xl text-maroon group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3 text-charcoal">Highly Rated</h3>
+                    <p class="text-gray-600 text-sm">4.5 stars from thousands of happy customers.</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 text-center group transform hover:-translate-y-2">
+                    <div
+                        class="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i
+                            class="fa-solid fa-cake-candles text-2xl text-gold group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3 text-charcoal">Perfect for Celebrations</h3>
+                    <p class="text-gray-600 text-sm">Ideal for birthdays, dinners, and family meetups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-white relative">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/food.png')] opacity-5 pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-maroon font-semibold tracking-wider uppercase text-sm">Discover</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-charcoal mt-2 mb-4">Our Signature Menu</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Handcrafted dishes made with love, tradition, and the finest
+                    ingredients.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Bhimavaram Rajula Kodi Palav"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-maroon font-bold shadow-md">
+                            ₹350</div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="font-playfair font-bold text-xl text-charcoal group-hover:text-maroon transition-colors mb-2">
+                            Bhimavaram Rajula Kodi Palav</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">A rich, aromatic, and spicy traditional
+                            chicken pulao cooked to perfection with signature spices.</p>
+
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqoRavBvZ3Qddbp7DUTA4Nha1fqNjQw78kmDtY0F2m-x_Q6vEzqVpru92O9GWrWPLPR5eecQLA7Ocoeri-_HzeTLvJLgeWCSZJxp5iuVRRjB0vYzhkjUlas4pa4jiIIeUTds_D_=w172-h224-p-k-no"
+                            alt="Hariyali Paneer Tikka"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-maroon font-bold shadow-md">
+                            ₹280</div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="font-playfair font-bold text-xl text-charcoal group-hover:text-maroon transition-colors mb-2">
+                            Hariyali Paneer Tikka</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Soft paneer cubes marinated in a vibrant
+                            green blend of mint, coriander, and spices, roasted in tandoor.</p>
+
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepEXR67ZgVuvJ-5SMnLWjfoQzD_qkjUwgT1_HkBvpobRQBasrhMtXn1BppUAMA0tAZY4R9wkdZQ3kW-cuqr-CGq3ZLu4U-g37zTGt8Mm2LExKTS3D-zVSE2s9yw-WcffIPAww83eg=w172-h224-p-k-no"
+                            alt="Chicken Lollipop"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-maroon font-bold shadow-md">
+                            ₹320</div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="font-playfair font-bold text-xl text-charcoal group-hover:text-maroon transition-colors mb-2">
+                            Chicken Lollipop</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Crispy, juicy, and perfectly spiced fried
+                            chicken wings, served with our special tangy dip.</p>
+
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqMPgDba8gbGs81PFsCPf716aUm1MefaZWLJVgNO_E3Hsd7PMRQrpIGXd5MX4o-0ky6KFeQEtDhkeUmrW6bQvQ3oC0xLV_TSvHSAW7VzL_JWFDYdaQ66a7jebMMZkpp8l0s0ej4VA=w172-h224-p-k-no"
+                            alt="Chicken Maharaja"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-maroon font-bold shadow-md">
+                            ₹380</div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="font-playfair font-bold text-xl text-charcoal group-hover:text-maroon transition-colors mb-2">
+                            Chicken Maharaja</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">A royal dish with a creamy, rich gravy and
+                            tender chicken pieces, fit for a king.</p>
+
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqiOObhlbFAWanOJZuQv_h3y8uNNZXGu7P9UPqoU0xhQnqY_EsrgN31XFLRr8eCIcmpoIwmSpfjg2cdy_v1h4GN-E4uCuKasP7QgIGd34rFmjS9xOBSxB06JfuUa49qM5Doq5Vv=w172-h224-p-k-no"
+                            alt="NTR Kodi Pakodi"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-maroon font-bold shadow-md">
+                            ₹290</div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="font-playfair font-bold text-xl text-charcoal group-hover:text-maroon transition-colors mb-2">
+                            NTR Kodi Pakodi</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Spicy, crispy, bite-sized chicken fritters
+                            seasoned with authentic local spice blends.</p>
+
+                    </div>
+                </div>
+                <!-- View All -->
+                <div
+                    class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex items-center justify-center p-8 bg-cream/30 cursor-pointer">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 mx-auto bg-gold text-charcoal rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-arrow-right text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-xl text-charcoal mb-2">View Full Menu</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://www.zomato.com/guntur/the-art-kitchens-lakshmipuram/order" target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-gold-gradient text-charcoal font-bold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-lg uppercase tracking-wide">
+                    Order Online Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-cream relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-80 h-80 bg-gold/10 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-80 h-80 bg-maroon/10 rounded-full blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-maroon font-semibold tracking-wider uppercase text-sm">Reviews</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-charcoal mt-2 mb-4">What Our Guests Say
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-gold mb-6 text-xl"><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 mb-8 italic text-lg leading-relaxed">"Best ambience I have seen in Guntur.
+                        Perfect place for family gatherings. The attention to detail is fantastic."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-maroon/10 rounded-full flex items-center justify-center text-maroon font-bold text-xl">
+                            A</div>
+                        <div>
+                            <h4 class="font-bold text-charcoal text-lg">Ananya S.</h4>
+                            <span class="text-sm text-gray-500">Local Guide</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300 transform md:-translate-y-4">
+                    <div class="text-gold mb-6 text-xl"><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 mb-8 italic text-lg leading-relaxed">"Food and service were excellent.
+                        Highly recommended. The Bhimavaram Palav was out of this world!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-xl">
+                            R</div>
+                        <div>
+                            <h4 class="font-bold text-charcoal text-lg">Rajesh K.</h4>
+                            <span class="text-sm text-gray-500">Food Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-gold mb-6 text-xl"><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 mb-8 italic text-lg leading-relaxed">"Great variety for both veg and non-veg
+                        lovers. The staff is extremely polite and welcoming."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 bg-maroon/10 rounded-full flex items-center justify-center text-maroon font-bold text-xl">
+                            M</div>
+                        <div>
+                            <h4 class="font-bold text-charcoal text-lg">Meera V.</h4>
+                            <span class="text-sm text-gray-500">Regular Customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact"
+                    class="bg-maroon text-white font-semibold px-8 py-4 rounded-full hover:bg-maroon-dark transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2 transform hover:-translate-y-1 text-lg">
+                    Plan Your Next Family Dinner With Us <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Info -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-maroon font-semibold tracking-wider uppercase text-sm">Location & Hours</span>
+                        <h2 class="font-playfair text-4xl md:text-5xl font-bold text-charcoal mt-2 mb-6">Visit Us Today
+                        </h2>
+                        <p class="text-gray-600 text-lg">We can't wait to host you. Drop by or give us a call to reserve
+                            your table.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-cream transition-colors">
+                            <div
+                                class="w-14 h-14 bg-maroon/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-maroon text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-charcoal text-xl mb-1">Address</h4>
+                                <p class="text-gray-600 leading-relaxed">Door no 5, 87-57/1, 2nd Lane,
+                                    Lakshmipuram,<br>Ashok Nagar, Guntur, AP 522007</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-cream transition-colors">
+                            <div
+                                class="w-14 h-14 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-phone text-gold text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-charcoal text-xl mb-1">Phone</h4>
+                                <p class="text-gray-600 leading-relaxed">+91 96691 81999</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-cream transition-colors">
+                            <div
+                                class="w-14 h-14 bg-maroon/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-clock text-maroon text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-charcoal text-xl mb-1">Operating Hours</h4>
+                                <p class="text-gray-600 leading-relaxed">Open daily – Closes at 11 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="tel:+919669181999"
+                            class="bg-maroon text-white font-semibold px-8 py-4 rounded-full hover:bg-maroon-dark transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-1">
+                            <i class="fa-solid fa-phone"></i> Call Now
+                        </a>
+                        <a href="https://maps.google.com/?q=The+ART+Kitchens+Guntur" target="_blank"
+                            class="border-2 border-maroon text-maroon font-semibold px-8 py-4 rounded-full hover:bg-maroon hover:text-white transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1">
+                            <i class="fa-solid fa-map-location-dot"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="rounded-3xl overflow-hidden shadow-2xl h-96 lg:h-auto min-h-[400px]">
+                    <iframe src="https://www.google.com/maps?q=The+ART+Kitchens,+Guntur&output=embed" width="100%"
+                        height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-utensils text-gold text-3xl"></i>
+                        <span class="font-playfair font-bold text-3xl tracking-wide">The ART Kitchens</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-loose mt-4">
+                        Guntur's favorite place for food and togetherness. Experience authentic flavors, premium
+                        ambience, and unforgettable meals.
+                    </p>
+                    <div class="flex gap-4 pt-4">
+                        <a href="https://www.instagram.com/theartkitchens/?hl=en" target="_blank"
+                            class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-charcoal hover:-translate-y-1 transition-all duration-300 text-lg"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/theartkitchensguntur/" target="_blank"
+                            class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-charcoal hover:-translate-y-1 transition-all duration-300 text-lg"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-charcoal hover:-translate-y-1 transition-all duration-300 text-lg"><i
+                                class="fa-brands fa-google"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-bold text-xl mb-8 font-playfair border-b border-white/10 pb-4 inline-block">Quick
+                        Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#home"
+                                class="text-gray-400 hover:text-gold transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> Home</a></li>
+                        <li><a href="#about"
+                                class="text-gray-400 hover:text-gold transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> About Us</a></li>
+                        <li><a href="#menu"
+                                class="text-gray-400 hover:text-gold transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> Our Menu</a></li>
+                        <li><a href="#contact"
+                                class="text-gray-400 hover:text-gold transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-xl mb-8 font-playfair border-b border-white/10 pb-4 inline-block">Services
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-400"><i
+                                class="fa-solid fa-utensils text-gold text-sm"></i> Dine-In</li>
+                        <li class="flex items-center gap-3 text-gray-400"><i
+                                class="fa-solid fa-motorcycle text-gold text-sm"></i> No-Contact Delivery</li>
+                        <li class="flex items-center gap-3 text-gray-400"><i
+                                class="fa-solid fa-bag-shopping text-gold text-sm"></i> Online Ordering</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-xl mb-8 font-playfair border-b border-white/10 pb-4 inline-block">Contact
+                    </h4>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4 text-gray-400">
+                            <div class="w-8 flex justify-center"><i
+                                    class="fa-solid fa-location-dot mt-1 text-gold text-lg"></i></div>
+                            <span class="leading-relaxed">Door no 5, 87-57/1, 2nd Lane, Lakshmipuram, Guntur</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-gray-400">
+                            <div class="w-8 flex justify-center"><i class="fa-solid fa-phone text-gold text-lg"></i>
+                            </div>
+                            <span>+91 96691 81999</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-gray-400">
+                            <div class="w-8 flex justify-center"><i class="fa-solid fa-clock text-gold text-lg"></i>
+                            </div>
+                            <span>Open daily – Closes at 11 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
+                <p class="text-gray-500 text-sm">© 2026 The ART Kitchens – All Rights Reserved.</p>
+                <div class="text-gray-500 text-sm space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

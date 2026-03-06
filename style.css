@@ -1,0 +1,56 @@
+/* Custom CSS that Tailwind doesn't perfectly cover by default in CDN form without plugins */
+
+html {
+    scroll-padding-top: 80px; /* Accounts for fixed navbar height */
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling for a premium feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFF8F2; /* cream */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4AF37; /* gold */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7A1E1E; /* maroon */
+}
+
+/* Utilities */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+/* Fallback for Masonry (CSS Columns) */
+.columns-1 { column-count: 1; }
+@media (min-width: 640px) { .sm\:columns-2 { column-count: 2; } }
+@media (min-width: 1024px) { .lg\:columns-3 { column-count: 3; } }
+
+/* Lightbox overlay for gallery (dummy) */
+.gallery-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-overlay.active {
+    display: flex;
+}
